@@ -256,16 +256,24 @@ def main():
 
     predict_from_models = [predict_from_model_1,predict_from_model_2,predict_from_model_3, predict_from_model_4,predict_from_model_5]
     delete_models = [delete_model_1, delete_model_2, delete_model_3, delete_model_4, delete_model_5]
+    video = cv2.VideoCapture(0)
 
     def refresh_win():
         WIN.fill(0)
-        text = FONT.render('Choose from which model you want to predict',1,(255,0,0))
-        WIN.blit(text, (W//2 - text.get_width()//2, 100))
+        status = 'ready'
+        if video is None or not video.isOpened():
+            status = 'no webcam'
+        if status == 'no webcam':
+            text = FONT.render('Connect webcam to your device first',1,(255,0,0))
+            WIN.blit(text, (W//2 - text.get_width()//2, H//2 - text.get_height()//2))
+        elif status == 'ready':
+            text = FONT.render('Choose from which model you want to predict',1,(255,0,0))
+            WIN.blit(text, (W//2 - text.get_width()//2, 100))
 
-        for i, model in enumerate(models):
-            create_button(model, (0,128,0), (0,255,0), W//2-150, 300+i*80, 300,30,action=predict_from_models[i])
-            if model != 'Empty':
-                create_button('X', (128,0,0), (255,0,0), W//2-150 + 300 + 30, 300+i*80,30,30,action=delete_models[i])
+            for i, model in enumerate(models):
+                create_button(model, (0,128,0), (0,255,0), W//2-150, 300+i*80, 300,30,action=predict_from_models[i])
+                if model != 'Empty':
+                    create_button('X', (128,0,0), (255,0,0), W//2-150 + 300 + 30, 300+i*80,30,30,action=delete_models[i])
 
         pygame.display.update()
 
