@@ -267,6 +267,7 @@ def main():
             text = FONT.render('Connect webcam to your device first',1,(255,0,0))
             WIN.blit(text, (W//2 - text.get_width()//2, H//2 - text.get_height()//2))
         elif status == 'ready':
+            video.release()
             text = FONT.render('Choose from which model you want to predict',1,(255,0,0))
             WIN.blit(text, (W//2 - text.get_width()//2, 100))
 
