@@ -15,4 +15,12 @@ To run this app you must have python 3 installed and working webcam.
 - After starting the app just click on the model you want to predict from.
 # Deleting existing models
 - In the main menu click the red cross next to the model you want to delete.
+# Modyfing options
+- Go to 'config.py' file and change options like number of epochs, batch size, learning rate... .
+# Custom scripts after prediction
+- Check the index of the model of which scripts you want to change (After starting the app check on which place is your model located).
+- In 'prediction_functions.py' file go to the function with your model's index.
+- Now instead of printing number to console you can add your own script
+# Custom model
+- To change main model architecture go to 'model.py' file and change whatever you want :)
 
