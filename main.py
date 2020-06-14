@@ -256,10 +256,10 @@ def main():
 
     predict_from_models = [predict_from_model_1,predict_from_model_2,predict_from_model_3, predict_from_model_4,predict_from_model_5]
     delete_models = [delete_model_1, delete_model_2, delete_model_3, delete_model_4, delete_model_5]
-    video = cv2.VideoCapture(0)
 
     def refresh_win():
         WIN.fill(0)
+        video = cv2.VideoCapture(0)
         status = 'ready'
         if video is None or not video.isOpened():
             status = 'no webcam'
