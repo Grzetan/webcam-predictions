@@ -1,7 +1,7 @@
 # webcam-predictions
 Train models using your own datasets made using webcam to make predictions.
 # Setup
-To run this app you must have python 3 installed and working webcam.
+To run this app you must have python 3, pytorch installed and working webcam.
 - Download repo and unzip it 
 - Go to root folder and type pip install -r requirements.txt
 - Next run python main.py
