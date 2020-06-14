@@ -1,15 +1,15 @@
 
 def model_1(prediction):
     if prediction == 0:
-        print('1 from 1')
+        print('1')
     elif prediction == 1:
-        print('2 from 1')
+        print('2')
 
 def model_2(prediction):
     if prediction == 0:
-        print('1 from 2')
+        print('1')
     elif prediction == 1:
-        print('2 from 2')
+        print('2')
 
 def model_3(prediction):
     if prediction == 0:
